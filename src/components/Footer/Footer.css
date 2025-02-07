@@ -1,0 +1,38 @@
+footer {
+  background-color: #f8f8f8;
+  color: #000;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  text-align: center;
+  width: 100%;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+.footer-section p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 15px;
+  }
+
+  .footer-section p {
+    font-size: 12px;
+  }
+}
