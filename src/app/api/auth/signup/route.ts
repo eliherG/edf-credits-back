@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     try {
         await connectDB();
 
-        const { fullname, email, password } = await request.json();
+        const { telefono, email, password } = await request.json();
 
         if (password < 8)
             return NextResponse.json(
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         const hashedPassword = await bcrypt.hash(password, 12);
 
         const user = new User({
-            fullname,
+            telefono,
             email,
             password: hashedPassword,
         });
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
         return NextResponse.json(
             {
-                fullname,
+                telefono,
                 email,
                 createdAt: savedUser.createdAt,
                 updatedAt: savedUser.updatedAt,
