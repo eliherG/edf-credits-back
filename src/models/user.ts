@@ -15,6 +15,7 @@ const UserSchema = new Schema(
             type: String,
             required: [true, "Password is required"],
             select: false,
+            match: [/^(?=.*\d)[A-Za-z\d]{8,}$/, "The password must be at least 8 characters and contain at least one number."]
         },
         telefono: {
             type: String,
